@@ -1,12 +1,8 @@
-/* algoritmo "jogo-pedra-papel-tesoura"
-
-
+/*
 Funcao randomComputerHand() : Caractere
 Var
    randomNumber: Inteiro
 Inicio
-      // TODO: Gerar um numero aleatorio e depois fazer um switch: pedra [1],
-      //papel [2], tesoura [3]
       
       randomNumber <- RandI(3)
 // Transforme o número gerado em texto
@@ -22,143 +18,14 @@ Inicio
         FimSe
    FimSe
 FimFuncao
-
-
-Funcao geraPlayer1(): Caractere
-var
-   player1: Caractere
-Inicio
-      EscrevaL("----------------------------------------")
-      EscrevaL("Escolha uma opção: pedra, papel, tesoura")
-      EscrevaL("----------------------------------------")
-      Leia(player1)
-      retorne Minusc(player1)
-FimFuncao
-
-
-Funcao playRound(player1, cpu: Caractere) : Caractere
-// Escreva uma função que joga uma unica rodada de pedra, papel, tesoura.
-// inputs: userHand, computerHand
-// output: você perdeu, mãoX ganha de mãoY | você venceu, mãoX ganha de mãoY,
-// empate: mãoZ empata com mãoZ
-// Processamento: Comparar primeiro a mão do player e decidir qual o tipo,
-// Depois comparar com a mão do pc.
-// Verificar Se a mão do usuário vence a mão do PC através de if else
-Inicio
-// Mostra na tela as mãos
-      EscrevaL("A sua mão foi: ", player1)
-      EscrevaL("A mão do PC foi: ", cpu)
-// Processa o resultado
-      Se (player1 = "pedra") entao
-      Se (cpu = "tesoura") entao
-         retorne "Você venceu. Pedra ganha tesoura"
-      Senao
-           Se (cpu = "pedra") entao
-              retorne "Empate. Os dois jogaram pedra"
-           Senao
-                retorne "Voce perdeu. Papel ganha de pedra."
-           FimSe
-      FimSe
-   Senao
-        Se (player1 = "papel") entao
-           Se (cpu = "pedra") entao
-              retorne "Você venceu. Pedra ganha de tesoura"
-           Senao
-                Se (cpu = "papel") entao
-                   retorne "Empate. Os dois escolheram papel."
-                Senao
-                     retorne "Você perdeu. Tesoura ganha de Papel."
-                FimSe
-           FimSe
-        Senao
-             Se (player1 = "tesoura") entao
-                Se (cpu = "pedra") entao
-                   retorne "Você perdeu. Pedra ganha tesoura"
-                Senao
-                     Se(cpu = "papel")entao
-                        retorne "Você venceu. Tesoura ganha de Papel."
-                     Senao
-                          retorne "Empate. Os dois jogaram Tesoura."
-                     FimSe
-                FimSe
-             FimSe
-        FimSe
-   FimSe
-FimFuncao
-
-
-Funcao game(quantidadeRodadas: Inteiro): Caractere
-// Escreva uma funcao que jogue 5 rounds, usando a funcao playRound(),
-// mostrando o resultado à cada rodada e mantendo o placar.
-Var
-   contador: Inteiro
-   resultado, computerHand, userHand, placar: Caractere
-   
-Inicio
-// Adiciona um loop que joga o número de rodadas que o player quer.
-      Para contador <- 1 ate quantidadeRodadas faca
-          // inputs do game:
-          // Gera mão do pc
-          computerHand <- randomComputerHand()
-          // Pergunta mão do jogador
-          userHand <- geraPlayer1()
-          // Joga uma rodada e salva o resultado em texto
-          resultado <- playRound(userHand, computerHand)
-          EscrevaL (resultado) // Você ganhou / Você Perdeu / Empate //
-      FimPara
-      
-
-// Ao final do loop, retorna o placar final da partida.
-      placar <- "Placar teste: Player 2 - 0 CPU"
-      retorne placar
-      
-FimFuncao
-
-
-var
-inicio
-      EscrevaL(game(2))
-
-// userHand <- Escolha uma opção: pedra, papel, tesoura, depois transforma em
-// minusc, para que não haja erro.
-
-
-
-
-
-
-
-
-// Outputs
-   // Três opções:
-      // Você ganhou! X vence Y
-      // Você perdeu! y vence z
-      // Houve um empate, X empata com X
-
-// Processamento:
-// computerHand <- Gerar numero aleatorio entre 1 e 3, sendo: pedra [1],
-   // papel [2], tesoura [3]
-   
-   
-
-   
-      // Caso a Mão do usuário for: Pedra
-            // pc == pedra: empate
-            // pc == tesoura, você venceu
-            // pc == papel, você perdeu
-            
-      // Caso mão usuario: tesoura
-            // pc == pedra: voce perdeu
-            // pc == tesoura, empate
-            // pc == papel, você venceu.
-            
-      // Caso mão usuario: papel
-            // pc == pedra: voce venceu
-            // pc == tesoura, você perdeu
-            // pc == papel, empate.
-
-fimalgoritmo
 */
 
-// Falta adicionar uma variável de controle de placar. Ideia: Adicionar tal variável na função playRound, então ela faz a verificação
-    // e depois adiciona mais um ponto para o pc ou para o jogador.
+
+function randomComputerHand() {
+// função que gera um número aleatório de 0 a 2, sendo pedra [0],
+      //papel [1], tesoura [2]
+      let randomNumber = Math.floor(Math.random()*3) + 1;
+      return randomNumber;
+
+}
+console.log(randomComputerHand());
