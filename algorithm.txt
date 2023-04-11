@@ -1,6 +1,8 @@
 algoritmo "jogo-pedra-papel-tesoura"
 
 
+FEITO
+
 Funcao randomComputerHand() : Caractere
 Var
    randomNumber: Inteiro
@@ -56,7 +58,7 @@ Inicio
            Se (cpu = "pedra") entao
               retorne "Empate. Os dois jogaram pedra"
            Senao
-                retorne "Voce perdeu. Papel ganha de pedra."
+                retorne "cccc"
            FimSe
       FimSe
    Senao
