@@ -32,7 +32,7 @@ function playRound(pontosJogador, pontosCPU) {
 
    if (player1 == "pedra") {
       if (CPU == "pedra") {
-         resultado = "Empate. Os dois jogaram pedra"
+         return resultado = "Empate. Os dois jogaram pedra"
       } else if (CPU == "papel") {
          return resultado = "Voce perdeu. Papel ganha de pedra.";
       } else {
@@ -42,11 +42,23 @@ function playRound(pontosJogador, pontosCPU) {
    } else if (player1 == "papel") {
       if (CPU == "pedra") {
          return resultado = "Voce venceu. Papel ganha de pedra.";
+      } else if (CPU == "tesoura"){
+         return resultado = "Voce perdeu. tesoura ganha de papel.";
+      } else {
+         return resultado = "Empate. Papel empata com papel."
       }
-   } else {
-
+   } else if (player1 == "tesoura") {
+      if (CPU == "pedra") {
+         return resultado = "Você perdeu. Pedra ganha de tesoura."
+      } else if (CPU == "papel") {
+         return resultado = "Você venceu. Tesoura ganha de papel."
+      } else {
+         return resultado = "Empate. Tesoura empata com tesoura."
+      }
    }
+
 }
+
 
 
 
@@ -56,14 +68,22 @@ function game() {
    let pointsPlayer1 = 0;
    let pointsCPU = 0;
    let resultado;
-   resultado = playRound(pointsPlayer1, pointsCPU);
+
+   for (let i =0; i < 5; i++) {
+      resultado = playRound(pointsPlayer1, pointsCPU);
 
       if (resultado.includes("venceu")) {
-         pointsPlayer += 1;
-      } else {
+         pointsPlayer1 += 1;
+      } else if (resultado.includes("perdeu")){
          pointsCPU += 1;
-      }
-      console.log(`Pontuação final: Jogador: ${pointsPlayer1} CPU: ${pointsCPU}`);
+      } 
+
+      console.log(resultado); // Exibe o resultado da rodada na tela.
+   }
+   
+      console.log(`Pontuação final: Jogador: ${pointsPlayer1} CPU: ${pointsCPU}`); // Exibe a pontuação final na tela.
+      console.log((pointsPlayer1 > pointsCPU) ? "O player 1 ganhou." : (pointsPlayer1 == pointsCPU) ? "Houve um empate no jogo." : "O CPU ganhou"
+      );
 }
 
 game();
