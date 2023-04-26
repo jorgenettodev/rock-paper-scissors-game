@@ -16,7 +16,7 @@ function randomComputerHand() {
 // TODO: Funcao geraPlayer1()
 function geraPlayer1() {
    let player1;
-   player1 = prompt("Escolha uma opção: pedra, papel, tesoura");
+   player1 = prompt("Digite uma opção: pedra, papel, tesoura");
    return player1;
 }
 
@@ -86,5 +86,5 @@ function game() {
       );
 }
 
-game();
+// game();
 
