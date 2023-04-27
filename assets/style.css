@@ -4,8 +4,50 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Nanum Pen Script', cursive;
+    /* border: 1px solid fuchsia;  */ /* debugging */
 }
 
+:root {
+    --red: #ffb3ba;
+    --orange: #ffdfba;
+    --yellow: #ffffba;
+    --green: #baffc9;
+    --blue: #bae1ff;
+    --white: #fAf8f6;
+    --pastelYellow: #fff8dc;
+}
+
+.bg-red {
+    background-color: var(--red);
+}
+
+.bg-orange {
+    background-color: var(--orange);
+}
+
+.bg-yellow {
+    background-color: var(--yellow);
+}
+
+.bg-green {
+    background-color: var(--green);
+}
+
+.bg-blue {
+    background-color: var(--blue);
+}
+
+.bg-gradient {
+    background: linear-gradient(90deg, #b9deed, #efefef);
+}
+
+.bg-white {
+    background-color: var(--white);
+}
+
+.bg-pastel-yellow {
+    background-color: var(--pastelYellow);
+}
 
 /* general flex-container  */
 .container {
@@ -14,7 +56,18 @@
     align-items: center;
 }
 
+h1 {
+    font-size: 3rem;
+}
+
 /* the whole page container */
+
+.column {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
 
 .scoreboard__container {
     display: flex;
@@ -35,7 +88,10 @@
 .result__container {
     display: flex;
     flex-direction: column;
-    min-width: 100vw;
+    width: 50vw;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 20px;
 }
 
 .result__text {
@@ -54,7 +110,7 @@
 }
 .hands {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 .hand__text {
@@ -76,7 +132,6 @@
 .select__hands {
     padding: 20px;
     display: flex;
-    border: 1px solid black;
     border-radius: 5px;
     justify-content: space-around;
     gap: 1rem;
@@ -87,4 +142,21 @@
     border: 1px solid black;
     padding: 10px;
     border-radius: 10px;;
+    width: 170px;
+    height: 170px;
+    background-size: 150px 150px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.rock {
+    background-image: url('../assets/rock.png');
+}
+
+.paper {
+    background-image: url('../assets/paper.png');
+}
+
+.scissors {
+    background-image: url('../assets/scissors.png');
 }

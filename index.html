@@ -8,9 +8,8 @@
     <link href="./assets/style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
 </head>
-<body>
-    <div class="column">
-
+<body class="bg-gradient">
+    <div class="column bg-white">
         <!-- TODO: scoreboard/header -->
         <div class="scoreboard__container">
             <h1>Rock Paper Scissors</h1>
@@ -29,18 +28,17 @@
         </div>
 
         <div class="main container">
-            <div class="result__container">
+            <div class="result__container bg-pastel-yellow">
                 <div class="result__text">
                     <h2>Result</h2>
-                    <h2 id="roundResult" class="round__result">You lost. Paper beats rock!</h2>
+                    <h2 id="roundResult" class="round__result">Select a hand to start the game</h2>
                 </div>
                 
                 <div class="hands">
                     <div class="hand player">
                         <h3 class="hand__text">YOU</h3>
                         <div class="card player">
-                            <!-- TODO: change hand image with js -->
-                            <img id="cardImagePlayer" src="./assets/interrogation.png" height="150px">
+
                         </div>
                     </div>
     
@@ -48,8 +46,6 @@
                     <div class="hand cpu">
                         <h3 class="hand__text">CPU</h3>
                         <div class="card cpu">
-                            <!-- TODO: change hand image with js -->
-                            <img id="cardImageCpu" src="./assets/interrogation.png" height="150px">
                         </div>
                     </div>
                 </div>
@@ -58,20 +54,20 @@
         </div>
 
         <!-- user input - select player hand -->
-        <div class="select container">
+        <div class="select container bg-pastel-yellow">
             <div class="select__div">
                 <h2 class="select__text">Select your hand</h2>
             </div>
 
             <div class="select__hands">
-                <div class="card rock">
-                    <img src="./assets/rock.png" alt="rock" height="150px">
+                <div class="card rock bg-orange">
+                    <!-- <img src="./assets/rock.png" alt="rock" height="150px"> -->
                 </div>
-                <div class="card paper">
-                    <img src="./assets/paper.png" alt="paper" height="150px">
+                <div class="card paper bg-orange">
+                    <!-- <img src="./assets/paper.png" alt="paper" height="150px"> -->
                 </div>
-                <div class="card scissors">
-                    <img src="./assets/scissors.png" alt="scissors" height="150px">
+                <div class="card scissors bg-orange">
+                    <!-- <img src="./assets/scissors.png" alt="scissors" height="150px"> -->
                 </div>
             </div>
         </div>
