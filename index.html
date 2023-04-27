@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors Game</title>
     <link href="./assets/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="column">
@@ -14,12 +15,12 @@
         <div class="scoreboard__container">
             <h1>Rock Paper Scissors</h1>
             <div class="score">
-                <div class="scoareboard__user">
+                <div class="scoareboard__players">
                     <h2>YOU</h2>
                     <!-- TODO: change player score with js -->
                     <div id="score__player">3</div> 
                 </div>
-                <div class="scoareboard__cpu">
+                <div class="scoareboard__players">
                     <h2>CPU</h2>
                     <!-- TODO: change cpu score with js -->
                     <div id="score__cpu">2</div>
@@ -31,27 +32,28 @@
             <div class="result__container">
                 <div class="result__text">
                     <h2>Result</h2>
-                    <h3 id="roundResult">You lost. Paper beats rock!</h3>
-
+                    <h2 id="roundResult" class="round__result">You lost. Paper beats rock!</h2>
                 </div>
                 
+                <div class="hands">
+                    <div class="hand player">
+                        <h3 class="hand__text">YOU</h3>
+                        <div class="card player">
+                            <!-- TODO: change hand image with js -->
+                            <img id="cardImagePlayer" src="./assets/interrogation.png" height="150px">
+                        </div>
+                    </div>
+    
+                    <!-- hand of the cpu -->
+                    <div class="hand cpu">
+                        <h3 class="hand__text">CPU</h3>
+                        <div class="card cpu">
+                            <!-- TODO: change hand image with js -->
+                            <img id="cardImageCpu" src="./assets/interrogation.png" height="150px">
+                        </div>
+                    </div>
+                </div>
                 <!-- hand of the player -->
-                <div class="hand player">
-                    <h3>YOU</h3>
-                    <div class="card player">
-                        <!-- TODO: change hand image with js -->
-                        <img id="cardImagePlayer" src="./assets/interrogation.png" height="150px">
-                    </div>
-                </div>
-
-                <!-- hand of the cpu -->
-                <div class="hand cpu">
-                    <h3>CPU</h3>
-                    <div class="card cpu">
-                        <!-- TODO: change hand image with js -->
-                        <img id="cardImageCpu" src="./assets/interrogation.png" height="150px">
-                    </div>
-                </div>
             </div>
         </div>
 
