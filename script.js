@@ -14,10 +14,17 @@ function randomComputerHand() {
 }
 
 // TODO: Funcao geraPlayer1()
-function geraPlayer1() {
-   let player1;
-   player1 = prompt("Digite uma opção: pedra, papel, tesoura");
-   return player1;
+function geraPlayer1(string) {
+
+
+   if (string.includes('pedra')) {
+      console.log('pedra');
+      return 'pedra';
+   } else if (string.includes('papel')) {
+      return 'papel';
+   } else if (string.includes('tesoura')) {
+      return 'tesoura';
+   }
 }
 
 
@@ -25,8 +32,8 @@ function geraPlayer1() {
 // TODO: Funcao playRound(player1, cpu)
 // Escreva uma função que joga uma unica rodada de pedra, papel, tesoura.
 
-function playRound(pontosJogador, pontosCPU) {
-   let player1 = geraPlayer1().toLowerCase();
+function playRound(pontosJogador, pontosCPU,string) {
+   let player1 = geraPlayer1(string).toLowerCase();
    let CPU = randomComputerHand();
    let resultado;
 
@@ -64,13 +71,13 @@ function playRound(pontosJogador, pontosCPU) {
 
 // TODO: Funcao game()
 
-function game() {
+function game(player1) {
    let pointsPlayer1 = 0;
    let pointsCPU = 0;
    let resultado;
 
-   for (let i =0; i < 5; i++) {
-      resultado = playRound(pointsPlayer1, pointsCPU);
+   
+      resultado = playRound(pointsPlayer1, pointsCPU,player1);
 
       if (resultado.includes("venceu")) {
          pointsPlayer1 += 1;
@@ -79,7 +86,6 @@ function game() {
       } 
 
       console.log(resultado); // Exibe o resultado da rodada na tela.
-   }
    
       console.log(`Pontuação final: Jogador: ${pointsPlayer1} CPU: ${pointsCPU}`); // Exibe a pontuação final na tela.
       console.log((pointsPlayer1 > pointsCPU) ? "O player 1 ganhou." : (pointsPlayer1 == pointsCPU) ? "Houve um empate no jogo." : "O CPU ganhou"
@@ -88,3 +94,10 @@ function game() {
 
 // game();
 
+// ################################ create a const for each button ################# // 
+
+const select = document.querySelector('.select__hands');
+select.addEventListener('click', (e) => {
+   let player1 = e.target.classList[1];
+   game(player1);
+});

@@ -15,6 +15,7 @@
     --blue: #bae1ff;
     --white: #fAf8f6;
     --pastelYellow: #fff8dc;
+    --golden: #E7D27C;
 }
 
 .bg-red {
@@ -48,7 +49,9 @@
 .bg-pastel-yellow {
     background-color: var(--pastelYellow);
 }
-
+.bg-golden {
+    background-color: var(--golden);
+}
 /* general flex-container  */
 .container {
     display: flex;
@@ -105,9 +108,6 @@ h1 {
     font-family: 'Roboto', sans-serif;
 }
 
-.round__result {
-
-}
 .hands {
     display: flex;
     justify-content: space-evenly;
@@ -147,16 +147,24 @@ h1 {
     background-size: 150px 150px;
     background-repeat: no-repeat;
     background-position: center;
+    transition: all 0.5s;
 }
 
-.rock {
+.pedra {
     background-image: url('../assets/rock.png');
 }
 
-.paper {
+.papel {
     background-image: url('../assets/paper.png');
 }
 
-.scissors {
+.tesoura {
     background-image: url('../assets/scissors.png');
+}
+
+.select__hands > .card:hover {
+    cursor: pointer;
+
+    transform: scale(1.1) translateY(-15px);
+    border: 10px solid var(--golden);
 }
