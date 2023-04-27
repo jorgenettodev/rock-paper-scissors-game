@@ -85,14 +85,14 @@ function game(player1) {
          pointsCPU += 1;
       } 
 
-      // TODO: Exiba o resultado diretamente no dom.
       const scoreText = document.querySelector('#roundResult');
       scoreText.textContent = resultado;
       console.log(resultado); // Exibe o resultado da rodada na tela.
       
-
+      // TODO: Exibe o resultado final de cada player no score board.
 
       console.log(`Pontuação final: Jogador: ${pointsPlayer1} CPU: ${pointsCPU}`); // Exibe a pontuação final na tela.
+
       console.log((pointsPlayer1 > pointsCPU) ? "O player 1 ganhou." : (pointsPlayer1 == pointsCPU) ? "Houve um empate no jogo." : "O CPU ganhou"
       );
 }

@@ -59,6 +59,10 @@
     align-items: center;
 }
 
+.game__title {
+    font-size: 72px;
+}
+
 h1 {
     font-size: 3rem;
 }
@@ -82,10 +86,14 @@ h1 {
 
 .score {
     display: flex;
+    width: 100px;
+    justify-content: space-between;
 }
 
 #score__player, #score__cpu {
     text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
 }
 
 .result__container {
