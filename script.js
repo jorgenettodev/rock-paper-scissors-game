@@ -93,11 +93,14 @@ function playRound(pontosJogador, pontosCPU,string) {
 
 
 
-
+// Iniciar o jogo com os dois com os pontos zerados.
+let pointsPlayer1 = 0;
+let pointsCPU = 0;
 
 function game(player1) {
-   let pointsPlayer1 = 0;
-   let pointsCPU = 0;
+   let scorePlayerNode = document.querySelector('#score__player');
+   let scoreCpuNode = document.querySelector('#score__cpu');
+
    let resultado;
 
 
@@ -106,16 +109,19 @@ function game(player1) {
 
       if (resultado.includes("venceu")) {
          pointsPlayer1 += 1;
+         scorePlayerNode.textContent = pointsPlayer1;
+
       } else if (resultado.includes("perdeu")){
          pointsCPU += 1;
+         scoreCpuNode.textContent = pointsCPU;
       } 
 
       const scoreText = document.querySelector('#roundResult');
+
       scoreText.textContent = resultado;
       console.log(resultado); // Exibe o resultado da rodada na tela.
       
-      // TODO: Exibe o resultado final de cada player no score board.
-
+      // TODO: Exibe o resultado final de cada player no score board ao final de 5 rodadas.
       console.log(`Pontuação final: Jogador: ${pointsPlayer1} CPU: ${pointsCPU}`); // Exibe a pontuação final na tela.
 
       console.log((pointsPlayer1 > pointsCPU) ? "O player 1 ganhou." : (pointsPlayer1 == pointsCPU) ? "Houve um empate no jogo." : "O CPU ganhou"
