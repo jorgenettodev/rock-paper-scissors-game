@@ -1,4 +1,8 @@
 function randomComputerHand() {
+// Atualiza o DOM: sessão resultados. Altera o icone do CPU na rodada atual.
+let computer = document.querySelector('#cpu');
+
+
 // função que gera um número aleatório de 0 a 2, sendo pedra [1],
       //papel [2], tesoura [3]
       let cpuHand;
@@ -10,12 +14,13 @@ function randomComputerHand() {
       } else {
          cpuHand = "tesoura"
       }
+      computer.className = `card cpu ${cpuHand}`;
       return cpuHand;
 }
 
 // TODO: Funcao geraPlayer1()
 function geraPlayer1(string) {
-
+   
 
    if (string.includes('pedra')) {
       return 'pedra';
@@ -33,6 +38,14 @@ function geraPlayer1(string) {
 
 function playRound(pontosJogador, pontosCPU,string) {
    let player1 = geraPlayer1(string).toLowerCase();
+
+
+   // Atualiza o DOM: sessão resultados. Altera o icone do player na rodada atual.
+   let playerHand = document.querySelector('#player');
+   playerHand.className = `card player ${player1}`;
+
+
+
    let CPU = randomComputerHand();
    let resultado;
 
@@ -63,6 +76,7 @@ function playRound(pontosJogador, pontosCPU,string) {
       }
    }
 
+   playerHand.classList.remove(player1);
 }
 
 
