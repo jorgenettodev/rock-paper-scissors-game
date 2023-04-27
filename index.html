@@ -5,8 +5,77 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors Game</title>
+    <link href="./assets/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="bg-gradient">
+    <div class="column bg-blue">
+        <!-- TODO: scoreboard/header -->
+        <div class="scoreboard__container">
+            <h1 class="game__title">Pedra Papel Tesoura</h1>
+            <div class="score">
+                <div class="scoareboard__players">
+                    <h2>Player</h2>
+                    <!-- TODO: change player score with js -->
+                    <div id="score__player">0</div> 
+                </div>
+                <div class="scoareboard__players">
+                    <h2>CPU</h2>
+                    <!-- TODO: change cpu score with js -->
+                    <div id="score__cpu">0</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main container">
+            <div class="result__container bg-pastel-yellow">
+                <div class="result__text">
+                    <h2>Resultado</h2>
+                    <h2 id="roundResult" class="round__result"></h2>
+                </div>
+                
+                <div class="hands">
+                    <div class="hand player">
+                        <h3 class="hand__text">YOU</h3>
+                        <div class="card player bg-white" id="player">
+
+                        </div>
+                    </div>
+    
+                    <!-- hand of the cpu -->
+                    <div class="hand cpu">
+                        <h3 class="hand__text">CPU</h3>
+                        <div class="card cpu bg-white" id="cpu">
+                        </div>
+                    </div>
+                </div>
+                <!-- hand of the player -->
+            </div>
+        </div>
+
+        <!-- user input - select player hand -->
+        <div class="select container bg-pastel-yellow">
+            <div class="select__div">
+                <h2 class="select__text">Selecione uma mão para começar a rodada.</h2>
+            </div>
+
+            <div class="select__hands">
+                <div class="card pedra bg-orange">
+                    <!-- <img src="./assets/rock.png" alt="rock" height="150px"> -->
+                </div>
+                <div class="card papel bg-orange">
+                    <!-- <img src="./assets/paper.png" alt="paper" height="150px"> -->
+                </div>
+                <div class="card tesoura bg-orange">
+                    <!-- <img src="./assets/scissors.png" alt="scissors" height="150px"> -->
+                </div>
+            </div>
+        </div>
+    
+
+
+
+    </div>
     <script src="./script.js"></script>
 </body>
 </html>

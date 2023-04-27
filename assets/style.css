@@ -1,0 +1,178 @@
+/* reset style */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nanum Pen Script', cursive;
+    /* border: 1px solid fuchsia;  */ /* debugging */
+}
+
+:root {
+    --red: #ffb3ba;
+    --orange: #ffdfba;
+    --yellow: #ffffba;
+    --green: #baffc9;
+    --blue: #bae1ff;
+    --white: #fAf8f6;
+    --pastelYellow: #fff8dc;
+    --golden: #E7D27C;
+}
+
+.bg-red {
+    background-color: var(--red);
+}
+
+.bg-orange {
+    background-color: var(--orange);
+}
+
+.bg-yellow {
+    background-color: var(--yellow);
+}
+
+.bg-green {
+    background-color: var(--green);
+}
+
+.bg-blue {
+    background-color: var(--blue);
+}
+
+.bg-gradient {
+    background: linear-gradient(90deg, #b9deed, #efefef);
+}
+
+.bg-white {
+    background-color: var(--white);
+}
+
+.bg-pastel-yellow {
+    background-color: var(--pastelYellow);
+}
+.bg-golden {
+    background-color: var(--golden);
+}
+/* general flex-container  */
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.game__title {
+    font-size: 72px;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+/* the whole page container */
+
+.column {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.scoreboard__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: 400;
+}
+
+.score {
+    display: flex;
+    width: 100px;
+    justify-content: space-between;
+}
+
+#score__player, #score__cpu {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.result__container {
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.result__text {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.result__text > * {
+    font-family: 'Roboto', sans-serif;
+}
+
+.hands {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.hand__text {
+    text-align: center;
+}
+
+/* select hands */
+.select {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 20px;
+    width: 40%;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.select__hands {
+    padding: 20px;
+    display: flex;
+    border-radius: 5px;
+    justify-content: space-around;
+    gap: 1rem;
+}
+
+.card {
+    display: flex;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 10px;;
+    width: 170px;
+    height: 170px;
+    background-size: 150px 150px;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all 0.5s;
+}
+
+.pedra {
+    background-image: url('../assets/rock.png');
+}
+
+.papel {
+    background-image: url('../assets/paper.png');
+}
+
+.tesoura {
+    background-image: url('../assets/scissors.png');
+}
+
+.select__hands > .card:hover {
+    cursor: pointer;
+
+    transform: scale(1.1) translateY(-15px);
+    border: 10px solid var(--golden);
+}
