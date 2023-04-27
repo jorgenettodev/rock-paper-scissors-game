@@ -33,7 +33,6 @@ function geraPlayer1(string) {
 
 
 
-// TODO: Funcao playRound(player1, cpu)
 // Escreva uma função que joga uma unica rodada de pedra, papel, tesoura.
 
 function playRound(pontosJogador, pontosCPU,string) {
@@ -76,13 +75,17 @@ function playRound(pontosJogador, pontosCPU,string) {
       }
    }
 
-   playerHand.classList.remove(player1);
+   if(resultado.includes("venceu")) {
+      playerHand.className = `card player ${player1} bg-green`;
+   } else if (resultado.includes("perdeu")) {
+      playerHand.className = `card player ${player1} bg-red`;
+   }
+   return resultado;
 }
 
 
 
 
-// TODO: Funcao game()
 
 function game(player1) {
    let pointsPlayer1 = 0;
