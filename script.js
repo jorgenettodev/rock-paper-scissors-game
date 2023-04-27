@@ -44,41 +44,49 @@ function playRound(pontosJogador, pontosCPU,string) {
    playerHand.className = `card player ${player1}`;
 
 
+   let computerHandColor = document.querySelector('#cpu');
+   
 
    let CPU = randomComputerHand();
    let resultado;
 
    if (player1 == "pedra") {
       if (CPU == "pedra") {
-         return resultado = "Empate. Os dois jogaram pedra"
+         resultado = "Empate. Os dois jogaram pedra"
       } else if (CPU == "papel") {
-         return resultado = "Voce perdeu. Papel ganha de pedra.";
+         resultado = "Voce perdeu. Papel ganha de pedra.";
       } else {
-         return resultado = "Voce venceu. Pedra ganha de tesoura.";
+         resultado = "Voce venceu. Pedra ganha de tesoura.";
          
       }
    } else if (player1 == "papel") {
       if (CPU == "pedra") {
-         return resultado = "Voce venceu. Papel ganha de pedra.";
+         resultado = "Voce venceu. Papel ganha de pedra.";
       } else if (CPU == "tesoura"){
-         return resultado = "Voce perdeu. tesoura ganha de papel.";
+         resultado = "Voce perdeu. tesoura ganha de papel.";
       } else {
-         return resultado = "Empate. Papel empata com papel."
+         resultado = "Empate. Papel empata com papel."
       }
    } else if (player1 == "tesoura") {
       if (CPU == "pedra") {
-         return resultado = "Você perdeu. Pedra ganha de tesoura."
+         resultado = "Você perdeu. Pedra ganha de tesoura."
       } else if (CPU == "papel") {
-         return resultado = "Você venceu. Tesoura ganha de papel."
+         resultado = "Você venceu. Tesoura ganha de papel."
       } else {
-         return resultado = "Empate. Tesoura empata com tesoura."
+         resultado = "Empate. Tesoura empata com tesoura."
       }
    }
 
+   // Change the player's and cpu's hand color according to match result.
    if(resultado.includes("venceu")) {
       playerHand.className = `card player ${player1} bg-green`;
+      computerHandColor.className = `card player ${CPU} bg-red`;
    } else if (resultado.includes("perdeu")) {
       playerHand.className = `card player ${player1} bg-red`;
+      computerHandColor.className = `card player ${CPU} bg-green`;
+   } else {
+      playerHand.className = `card player ${player1} bg-golden`;
+      computerHandColor.className = `card player ${CPU} bg-golden`;
    }
    return resultado;
 }
